@@ -78,16 +78,16 @@ PRODUCT_PACKAGES += \
 endif
 
 # Google PinYin
-PRODUCT_COPY_FILES += $(shell test -d vendor/sm/prebuilt/google/app/GooglePinYin && \
-    find vendor/sm/prebuilt/google/app/GooglePinYin -name '*.apk' \
-    -printf '%p:system/app/GooglePinYin/%f ')
-PRODUCT_COPY_FILES += $(shell test -d vendor/sm/prebuilt/google/app/GooglePinYin && \
-    find vendor/sm/prebuilt/google/app/GooglePinYin -name '*.so' \
-    -printf '%p:system/app/GooglePinYin/lib/arm/%f ')
+#PRODUCT_COPY_FILES += $(shell test -d vendor/sm/prebuilt/google/app/GooglePinYin && \
+#    find vendor/sm/prebuilt/google/app/GooglePinYin -name '*.apk' \
+#    -printf '%p:system/app/GooglePinYin/%f ')
+#PRODUCT_COPY_FILES += $(shell test -d vendor/sm/prebuilt/google/app/GooglePinYin && \
+#    find vendor/sm/prebuilt/google/app/GooglePinYin -name '*.so' \
+#    -printf '%p:system/app/GooglePinYin/lib/arm/%f ')
 
 #ForceStop
-PRODUCT_COPY_FILES += \
-    vendor/sm/prebuilt/Brevent/Brevent.apk:system/app/Brevent/Brevent.apk
+#PRODUCT_COPY_FILES += \
+#    vendor/sm/prebuilt/Brevent/Brevent.apk:system/app/Brevent/Brevent.apk
 
 # Copy over added mimetype supported in libcore.net.MimeUtils
 PRODUCT_COPY_FILES += \
@@ -145,22 +145,18 @@ PRODUCT_PACKAGES += \
 
 # Custom CM packages
 PRODUCT_PACKAGES += \
-    CMFileManager \
     CMSettingsProvider \
-    CMUpdater \
     SMSetupWizard \
-    Eleven \
     PhoneLocationProvider \
     ExactCalculator \
     LiveLockScreenService \
     LockClock \
-    Trebuchet \
     WallpaperPicker \
     WeatherProvider
 
 # Exchange support
-PRODUCT_PACKAGES += \
-    Exchange2
+#PRODUCT_PACKAGES += \
+#    Exchange2
 
 # Extra tools in SM
 PRODUCT_PACKAGES += \
