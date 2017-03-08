@@ -5,4 +5,5 @@ PRODUCT_PACKAGES += \
     Browser \
     Music \
     NLauncher \
-    NLnotifier
+    NLnotifier \
+    SMWeatherProvider
