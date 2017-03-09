@@ -146,7 +146,7 @@ PRODUCT_PACKAGES += \
 # Custom CM packages
 PRODUCT_PACKAGES += \
     CMSettingsProvider \
-    SMSetupWizard \
+    LineageSetupWizard \
     PhoneLocationProvider \
     ExactCalculator \
     LiveLockScreenService \
