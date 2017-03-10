@@ -1,9 +1,9 @@
 # Use all private apps
 PRODUCT_PACKAGES += \
-    AmazeFileManager \
     BaiduInput \
     Brevent \
     Browser \
+    FileManager \
     Music \
     NLauncher \
     NLnotifier \
