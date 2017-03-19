@@ -89,6 +89,12 @@ endif
 #PRODUCT_COPY_FILES += \
 #    vendor/sm/prebuilt/Brevent/Brevent.apk:system/app/Brevent/Brevent.apk
 
+#gaojixian
+#ifeq ($(WITH_gaojixian),true)
+#PRODUCT_PACKAGES += \
+#    gaojixian
+#endif
+
 # Copy over added mimetype supported in libcore.net.MimeUtils
 PRODUCT_COPY_FILES += \
     vendor/sm/prebuilt/common/lib/content-types.properties:system/lib/content-types.properties
@@ -147,6 +153,8 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     CMSettingsProvider \
     LineageSetupWizard \
+    CustomTiles \
+    Eleven \
     PhoneLocationProvider \
     ExactCalculator \
     LiveLockScreenService \
