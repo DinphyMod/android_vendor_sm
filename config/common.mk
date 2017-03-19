@@ -154,7 +154,6 @@ PRODUCT_PACKAGES += \
     CMSettingsProvider \
     LineageSetupWizard \
     CustomTiles \
-    Eleven \
     PhoneLocationProvider \
     ExactCalculator \
     LiveLockScreenService \
