@@ -157,6 +157,7 @@ PRODUCT_PACKAGES += \
     CustomTiles \
     PhoneLocationProvider \
     ExactCalculator \
+#    Jelly \
     LiveLockScreenService \
     LockClock \
     WallpaperPicker \
