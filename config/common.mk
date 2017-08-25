@@ -86,6 +86,18 @@ endif
 #    find vendor/sm/prebuilt/google/app/GooglePinYin -name '*.so' \
 #    -printf '%p:system/app/GooglePinYin/lib/arm/%f ')
 
+#BusyBox
+PRODUCT_COPY_FILES += \
+    vendor/sm/prebuilt/bb/bb.apk:system/app/bb/bb.apk
+
+#Kernel
+PRODUCT_COPY_FILES += \
+    vendor/sm/prebuilt/Kernel/kernel.apk:system/app/Kernel/kernel.apk
+
+#substratum
+PRODUCT_COPY_FILES += \
+    vendor/sm/prebuilt/substratum/substratum.apk:system/app/substratum/substratum.apk
+
 #ForceStop
 #PRODUCT_COPY_FILES += \
 #    vendor/sm/prebuilt/Brevent/Brevent.apk:system/app/Brevent/Brevent.apk
@@ -125,6 +137,11 @@ include vendor/sm/config/themes_common.mk
 # CMSDK
 include vendor/sm/config/cmsdk_common.mk
 
+# TWRP
+ifeq ($(WITH_TWRP),true)
+include vendor/cm/config/twrp.mk
+endif
+
 # Bootanimation
 PRODUCT_PACKAGES += \
     bootanimation.zip
@@ -154,7 +171,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     CMSettingsProvider \
     LineageSetupWizard \
-    CustomTiles \
     PhoneLocationProvider \
     ExactCalculator \
     LiveLockScreenService \

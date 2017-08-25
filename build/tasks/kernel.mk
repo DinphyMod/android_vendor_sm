@@ -161,7 +161,6 @@ ifeq "$(wildcard $(KERNEL_SRC) )" ""
         $(warning * THIS IS DEPRECATED, AND WILL BE DISCONTINUED                *)
         $(warning * Please configure your device to download the kernel         *)
         $(warning * source repository to $(KERNEL_SRC))
-        $(warning * See http://wiki.lineageos.org/w/Doc:_integrated_kernel_building)
         $(warning * for more information                                        *)
         $(warning ***************************************************************)
         FULL_KERNEL_BUILD := false
@@ -353,6 +352,12 @@ kernelxconfig kernelconfig: $(KERNEL_OUT_STAMP)
 	$(MAKE) $(MAKE_FLAGS) -C $(KERNEL_SRC) O=$(KERNEL_OUT) ARCH=$(KERNEL_ARCH) $(KERNEL_CROSS_COMPILE) $(KERNEL_DEFCONFIG)
 	env KCONFIG_NOTIMESTAMP=true \
 		 $(MAKE) -C $(KERNEL_SRC) O=$(KERNEL_OUT) ARCH=$(KERNEL_ARCH) $(KERNEL_CROSS_COMPILE) $(KERNELCONFIG_MODE)
+	env KCONFIG_NOTIMESTAMP=true \
+		 $(MAKE) -C $(KERNEL_SRC) O=$(KERNEL_OUT) ARCH=$(KERNEL_ARCH) $(KERNEL_CROSS_COMPILE) savedefconfig
+	cp $(KERNEL_OUT)/defconfig $(KERNEL_DEFCONFIG_SRC)
+
+kernelsavedefconfig: $(KERNEL_OUT_STAMP)
+	$(MAKE) $(MAKE_FLAGS) -C $(KERNEL_SRC) O=$(KERNEL_OUT) ARCH=$(KERNEL_ARCH) $(KERNEL_CROSS_COMPILE) $(KERNEL_DEFCONFIG)
 	env KCONFIG_NOTIMESTAMP=true \
 		 $(MAKE) -C $(KERNEL_SRC) O=$(KERNEL_OUT) ARCH=$(KERNEL_ARCH) $(KERNEL_CROSS_COMPILE) savedefconfig
 	cp $(KERNEL_OUT)/defconfig $(KERNEL_DEFCONFIG_SRC)
